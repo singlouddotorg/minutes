@@ -7122,10 +7122,13 @@
     // showed up while typing, on top of "Add" not finding it either.
     var master = (typeof EZ_MINUTES_MASTER_TUNEBOOK_LIST !== "undefined" && EZ_MINUTES_MASTER_TUNEBOOK_LIST.books) || {};
     // v145 release review, finding 4: exclude bare Work records (no real Edition, e.g.
-    // The American Harmony, keyed by its own internal w_shmha_AH id) from datalist
-    // suggestions too, same reasoning as findRealBookByTypedName() below - suggesting a
-    // title while typing that then can't become a real, precise Song Source would be a
-    // confusing dead end, not a real suggestion.
+    // The American Harmony, at the time keyed by its own internal w_shmha_AH id - that
+    // record was merged 2026-09-07 into w_AHI, the same book's real SingLoud work code,
+    // once Kevin confirmed AH/AHI were duplicate entries for one title; the general case
+    // of a bare Work with no Edition is unchanged and still real for other books) from
+    // datalist suggestions too, same reasoning as findRealBookByTypedName() below -
+    // suggesting a title while typing that then can't become a real, precise Song Source
+    // would be a confusing dead end, not a real suggestion.
     var masterOptions = Object.keys(master).filter(function(code){
       var b = master[code];
       return b.editionCode || b.editionId;
@@ -7169,11 +7172,14 @@
     Object.keys(master).forEach(function(code){
       var b = master[code];
       // v145 release review, finding 4: a bare Work record with no real Edition at all
-      // (5 real cases in the current Library, e.g. The American Harmony, keyed by its own
-      // internal w_shmha_AH id since it has no public Work Code either) used to be
-      // matchable and addable here exactly like a real Edition - confirmed live: searching
-      // "The American Harmony" and adding it wrote the literal internal id "w_shmha_AH"
-      // into the CSV's own Book column, with Edition Code left blank. That internal
+      // (real cases in the current Library, e.g. The American Harmony, at the time keyed
+      // by its own internal w_shmha_AH id since it had no public Work Code either - that
+      // record was merged 2026-09-07 into w_AHI once Kevin confirmed AH/AHI were the same
+      // book, so this exact example no longer exists, but the general case is still real
+      // for other titles) used to be matchable and addable here exactly like a real
+      // Edition - confirmed live: searching "The American Harmony" and adding it wrote
+      // the literal internal id "w_shmha_AH" into the CSV's own Book column, with Edition
+      // Code left blank. That internal
       // database key was never meant to be a portable Singing Record identifier. A bare
       // Work is a real, known title but not yet a specific, physical printing - genuinely
       // different from a knownUnindexed Edition (a real, specific printing, just not
