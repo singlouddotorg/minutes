@@ -1,0 +1,9 @@
+Schema Version,Order of entry,Record Type,Session Label,Session ID,Metadata Field,Metadata Value,Event,Date,Location,Chair,Vice-Chair,Secretary,Treasurer,Arranger(s),Chaplain(s),Memorial Lesson Leader,Book,Edition Code,Leader(s),Canonical Leader(s),Page,Song,Tag,Notes,Marker,Timestamp ISO,Time entered,Series Code,Event ID,Previous Event ID,Status
+5,1,session,,scmtnlnhry,,,Tuesday Night Singing,2026-09-01,"St. David's, Roland Park",,,,,,,,,,,,,,,,,2026-09-04T23:43:07.966Z,,mtnlnbew,mtnlnbew-2026-09-01,,
+5,2,song,,scmtnlnhry,,,Tuesday Night Singing,2026-09-01,"St. David's, Roland Park",,,,,,,,CHW2015,CHW2015,,,45t,Ila,,,,2026-09-04T23:43:01.417Z,11:43 PM,mtnlnbew,mtnlnbew-2026-09-01,,
+5,3,song,,scmtnlnhry,,,Tuesday Night Singing,2026-09-01,"St. David's, Roland Park",,,,,,,,CHW2015,CHW2015,,,59t,Mear,,,,2026-09-04T23:43:02.700Z,11:43 PM,mtnlnbew,mtnlnbew-2026-09-01,,
+5,4,song,,scmtnlnhry,,,Tuesday Night Singing,2026-09-01,"St. David's, Roland Park",,,,,,,,CHW2015,CHW2015,,,99,Pleasant Hill,,,,2026-09-04T23:43:03.417Z,11:43 PM,mtnlnbew,mtnlnbew-2026-09-01,,
+5,5,song,,scmtnlnhry,,,Tuesday Night Singing,2026-09-01,"St. David's, Roland Park",,,,,,,,CHW2015,CHW2015,,,146t,Solemn Warning,,,,2026-09-04T23:43:04.832Z,11:43 PM,mtnlnbew,mtnlnbew-2026-09-01,,
+5,6,song,,scmtnlnhry,,,Tuesday Night Singing,2026-09-01,"St. David's, Roland Park",,,,,,,,CHW2015,CHW2015,,,178t,Pilesgrove,,,,2026-09-04T23:43:06.249Z,11:43 PM,mtnlnbew,mtnlnbew-2026-09-01,,
+5,7,marker,,scmtnlnhry,,,Tuesday Night Singing,2026-09-01,"St. David's, Roland Park",,,,,,,,,,,,,,,,RECESS,2026-09-04T23:43:06.683Z,11:43 PM,mtnlnbew,mtnlnbew-2026-09-01,,
+5,8,song,,scmtnlnhry,,,Tuesday Night Singing,2026-09-01,"St. David's, Roland Park",,,,,,,,CHW2015,CHW2015,,,312,Penitence,,,,2026-09-04T23:43:07.532Z,11:43 PM,mtnlnbew,mtnlnbew-2026-09-01,,

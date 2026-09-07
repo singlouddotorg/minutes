@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minutes :: Instructions</title>
+<!-- Deliberately no external fonts or CDN scripts for the page itself — everything written
+     here works fully offline. The one exception is the video placeholder below, which
+     says plainly that video playback needs a connection once a real video is embedded. -->
+<style>
+  :root{
+    --paper:#ffffff;
+    --card:#f8f3e6;
+    --line:#d8cbaa;
+    --line2:#e1d5b8;
+    --ink:#241f1a;
+    --muted:#6b5f4d;
+    --faint:#a89a80;
+    --accent:#8a2e2e;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:0 20px 40px;}
+  .header-wrap{max-width:900px; margin:0 auto; padding:0 20px;}
+
+  .suite-header{
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    padding:14px 0; border-bottom:1px solid var(--line2); margin-bottom:20px;
+  }
+  .suite-brand{ display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--ink); }
+  .suite-brand .shapes{ display:flex; gap:5px; }
+  .suite-brand .suite-name{ font-family:'Spectral',Georgia,serif; font-weight:600; font-size:18px; letter-spacing:.01em; }
+  .suite-nav{ display:flex; gap:2px; flex-wrap:wrap; }
+  .suite-nav a{
+    font-family:'Inter',sans-serif; font-size:12.5px; font-weight:600; color:var(--muted);
+    text-decoration:none; padding:6px 10px; border-radius:5px;
+  }
+  .suite-nav a:hover{ background:var(--card); color:var(--ink); }
+  .suite-nav a[aria-current="page"]{ color:var(--accent); background:var(--card); }
+  .suite-nav a:focus-visible, .suite-brand:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .suite-footer{
+    margin-top:32px; padding-top:14px; border-top:1px solid var(--line2);
+    display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center;
+    font-family:'Inter',sans-serif; font-size:11px; color:var(--faint);
+  }
+  .suite-footer a{ color:var(--faint); text-decoration:underline; }
+  .suite-footer a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+  h1{ font-family:'Spectral',Georgia,serif; font-weight:600; font-size:28px; margin:0 0 6px; }
+  .intro{ color:var(--muted); font-size:14.5px; margin:0 0 24px; }
+  h2{
+    font-family:'Spectral',Georgia,serif; font-weight:600; font-size:19px; margin:34px 0 10px;
+    padding-bottom:6px; border-bottom:1px solid var(--line2); color:var(--ink);
+  }
+  h2:first-of-type{ margin-top:0; }
+  h3{ font-family:'Spectral',Georgia,serif; font-weight:600; font-size:15.5px; margin:18px 0 6px; }
+  p, li{ font-size:14px; color:var(--ink); }
+  ul, ol{ padding-left:22px; }
+  li{ margin-bottom:4px; }
+  code{
+    font-family:'Roboto Mono',monospace; background:var(--card); border:1px solid var(--line2);
+    border-radius:3px; padding:1px 5px; font-size:12.5px;
+  }
+  .note{
+    background:var(--card); border:1px solid var(--line2); border-left:3px solid var(--accent);
+    border-radius:0 8px 8px 0; padding:12px 16px; margin:14px 0; font-size:13.5px; color:var(--muted);
+  }
+  .prerelease-notice{
+    background:#FDF3D9; border:1px solid #E8C874; border-radius:10px;
+    padding:18px 22px; margin:20px 0 28px; font-size:14px; line-height:1.6; color:var(--muted);
+  }
+  .prerelease-notice h2{
+    font-family:'Spectral',Georgia,serif; font-size:16px; font-weight:600; color:var(--ink); margin:0 0 8px;
+  }
+  .prerelease-notice a{ color:var(--accent); }
+  .quick-start{
+    background:var(--card); border:1px solid var(--line2); border-radius:10px; padding:18px 22px;
+  }
+  .quick-start ol{ margin:0; }
+  .planned{
+    display:inline-block; font-size:10.5px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.04em; color:var(--accent); background:var(--paper); border:1px solid var(--accent);
+    border-radius:4px; padding:1px 7px; margin-left:6px; vertical-align:middle;
+  }
+  table{ border-collapse:collapse; width:100%; margin:10px 0; font-size:13px; }
+  th, td{ text-align:left; padding:6px 10px; border-bottom:1px solid var(--line2); vertical-align:top; }
+  th{ color:var(--muted); font-weight:600; font-size:12px; }
+</style>
+</head>
+<body>
+<div class="header-wrap">
+  <header class="suite-header">
+    <a href="index.html" class="suite-brand">
+      <span class="shapes" aria-hidden="true">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8a2e2e" stroke-width="2"><polygon points="12,3 21,20 3,20"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8a2e2e" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8a2e2e" stroke-width="2"><rect x="4" y="4" width="16" height="16"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8a2e2e" stroke-width="2"><polygon points="12,2 22,12 12,22 2,12"/></svg>
+      </span>
+      <span class="suite-name">Minutes</span>
+    </a>
+    <nav class="suite-nav" aria-label="Suite navigation">
+      <a href="index.html"><strong>Open the app</strong></a>
+      <a href="instructions.html" aria-current="page">Instructions</a>
+      <span aria-hidden="true" style="opacity:.4;padding:0 2px;">|</span>
+      <a href="https://github.com/singlouddotorg/tunebooks" target="_blank" rel="noopener">Tunebooks</a>
+    </nav>
+  </header>
+</div>
+
+<div class="wrap">
+  <h1>Instructions and Workflow</h1>
+  <p class="intro">Everything below covers the complete process, start to finish: recording a singing in Capture, then reviewing and preparing finished minutes in Compile.</p>
+
+  <div class="prerelease-notice">
+    <h2>Pre-Release</h2>
+    <p style="margin:0;">Minutes is still in testing. Any and all feedback is welcome — please use with caution, and keep a backup of anything important. Reach the developer, Kevin of SingLoud.org, at <a href="mailto:sacredharpbiblio@gmail.com">sacredharpbiblio@gmail.com</a>.</p>
+  </div>
+
+  <h2>Quick Start</h2>
+  <div class="quick-start">
+    <ol>
+      <li>Open <a href="index.html">Minutes</a> — one application, four stages, shown as numbered steps down the left.</li>
+      <li><strong>1 Setup:</strong> find an existing singing (grouped by series, if it's a recurring one) or start a new one.</li>
+      <li><strong>2 Capture:</strong> record the songs and officers live, during the singing.</li>
+      <li><strong>3 Compile:</strong> after the singing, review what was logged and fill in anything that shouldn't burden someone logging live.</li>
+      <li><strong>4 Export:</strong> preview and download the finished result.</li>
+    </ol>
+    <p style="margin:10px 0 0;font-size:13px;color:var(--muted);">The same singing carries across all four stages automatically — nothing needs to be downloaded and re-imported by hand between them. Each stage still has a working save/download of its own for backups.</p>
+  </div>
+
+  <h2>Setup: Finding or Starting a Singing</h2>
+  <ul>
+    <li>Setup is the home screen. If your singing is part of a recurring series, previous occurrences appear grouped together — expand a series to see its dated occurrences, or use <strong>New Singing in This Series</strong> to start the next one, which carries the venue and Series Code forward but starts fresh on date, officers, and the song list. The same continuation is also available from inside any currently-open singing itself, as <strong>New Singing Based on This One</strong> — useful when you opened a singing directly (an individual file, say) rather than by browsing a series list.</li>
+    <li>A <strong>Series Code</strong> links occurrences of the same recurring singing together. Click <strong>Generate</strong> to get one — a short, readable, human-invented code becomes a real collision risk once many singings are compiled over the years, so the generated code is deliberately not a readable word. The field stays editable too, for the real case of matching a code someone else already started a series with; typing your own is just not the encouraged path for starting a new one.</li>
+    <li>Series grouping needs a Chromium-based browser (Chrome, Edge, Opera) to browse a local folder; Firefox and Safari don't support that yet. Click <strong>Open Singing</strong>, then <strong>Choose a Singing File</strong> to open a single file directly instead \u2014 that works everywhere, in every browser, regardless.</li>
+    <li>Once a singing is open, its name, date, and status stay visible at the top of the screen no matter which of the four stages you're in.</li>
+  </ul>
+
+  <h2>Preparing Before the Event</h2>
+  <ul>
+    <li>Minutes is built for a laptop, desktop computer, or a tablet with a physical keyboard — it isn't designed for phone-sized screens.</li>
+    <li>Open the app ahead of time, ideally before you arrive, so it's already loaded and ready. It's a single file with no install step, and works fully offline once open — nothing about logging songs depends on a network connection at all.</li>
+    <li>In Setup, either open a previous occurrence's next singing, or start a completely new one.</li>
+    <li>Fill in Event, Date, Location, and — if known — the Officers &amp; Roles fields (Chair, Vice-Chair, Secretary, Treasurer, Arranger(s), Chaplain(s), Memorial Lesson Leader). None of these are required to start logging songs, but filling them in early means Compile won't need to guess later.</li>
+    <li>If it's useful, download an early backup CSV once the first few songs are in, just to confirm the whole save/export path works on this device before it matters.</li>
+  </ul>
+  <div class="note">Sacred Harp business-session officer elections are usually a ceremonial reconfirmation of whoever is already serving, not a new appointment. If that's the case, fill in Officers &amp; Roles with the actual presiding officers at the very start of logging, rather than waiting for the business session to make it "official."</div>
+
+  <h2>Recording (the Capture stage)</h2>
+  <ul>
+    <li>For each song: type the <strong>Leader</strong>, then the <strong>Page</strong> (e.g. <code>123</code>, <code>45t</code>, <code>45b</code> for a top/bottom page), and press Enter — no button needed.</li>
+    <li>The song title looks itself up automatically from whichever songbook is selected. If a page could mean two different songs, this stage asks you to specify top or bottom rather than guessing. If a page doesn't exist in the book's index, it asks you to confirm before adding it, so a typo doesn't get logged as if it were real.</li>
+    <li>Multiple leaders on one song can be entered comma-separated in the Leader field.</li>
+    <li>Use <strong>Recess / Lunch / Announcements</strong> to mark breaks.</li>
+    <li>Tag a song <strong>Call Back</strong> (the leader who brings the class back together after a break), <strong>Memorial</strong>, or <strong>Special</strong> as it applies.</li>
+    <li>To correct a recent entry, tap it in the log to edit it in place — the same page/leader/duplicate checks apply to an edit as to a new entry.</li>
+  </ul>
+
+  <h2>Sessions, Days, and Locations</h2>
+  <p>A singing in Minutes can span more than one session — a second day of a convention, a change of venue, or any other clearly distinct segment of the same overall event. This is different from starting a whole new singing:</p>
+  <ul>
+    <li><strong>Start New Singing</strong> begins an entirely new event and a new file. Use this when you're done with one singing and moving on to a completely different one — or return to Setup and open a different one.</li>
+    <li><strong>Start New Session</strong> stays inside the <em>same</em> event and the same file. Use this for a new day, a changed location, or a distinct segment of the same convention.</li>
+  </ul>
+  <p>Tapping <strong>Start New Session</strong> reopens the setup fields so you can update the Date and/or Location, add a session label if you like (e.g. "Day 2"), and update Officers &amp; Roles if anything genuinely differs for this session — then confirm. Nothing already logged changes; everything from that point forward carries the new details.</p>
+  <p>A session can carry its own:</p>
+  <ul>
+    <li>date</li>
+    <li>location</li>
+    <li>session label</li>
+    <li>officers, only where they actually differ from the event's usual officers</li>
+  </ul>
+
+  <h2>Saving and Backups</h2>
+  <ul>
+    <li>The Capture stage saves to this browser automatically as you go — no action needed. A status line shows <strong>Saved locally at [time]</strong>, or a clear warning if local saving isn't working on this device.</li>
+    <li>If you accidentally refresh or close the tab, reopening on the same device and browser restores where you left off — the active singing, and which stage you were on.</li>
+    <li>Local saving alone isn't a substitute for a real backup — download or copy the CSV during the event as well, and definitely at the end.</li>
+    <li>An optional automatic periodic backup download exists (off by default) — turn it on if you'd like an extra copy saved to your Downloads folder every few minutes. It's a bonus, not a replacement for downloading the final file yourself.</li>
+  </ul>
+
+  <h2>Moving to Compile</h2>
+  <ul>
+    <li>The same singing carries into Compile automatically — visiting the Compile stage for the first time after recording picks up what was just logged, with no file to choose.</li>
+    <li>Compile checks the file's schema version. An unfamiliar-but-not-newer version is flagged clearly so you know to double-check the result, but the import still proceeds. A version genuinely newer than what this build understands is treated differently — that one's a real data-loss risk (re-exporting could silently drop whatever the newer schema added), so it blocks the import outright rather than just noting it, with a message pointing you to a version of Compile that actually supports it.</li>
+    <li>Event Details, Roles, and the Song List all auto-fill from what was recorded. The import message lists exactly what got filled in, so it's easy to spot-check.</li>
+    <li>Working from a file that didn't come through Setup — someone emailed you a CSV, say? Compile's own Import tab still takes a file directly, the same as it always has.</li>
+  </ul>
+
+  <h2>Reviewing and Correcting</h2>
+  <p>Once in Compile, work through it before exporting:</p>
+  <ul>
+    <li>Check Event Details and Roles for anything that auto-filled incorrectly or needs a human's judgment.</li>
+    <li>If the file has more than one session, a Sessions section appears on the Song List tab — one card per session, with its own location and any officer differences. Each officer there has three real choices: use the Event default, set none for that role this session, or name a different person for just that session. Two sessions sharing a date, location, or label are still tracked separately — Compile disambiguates the display automatically rather than merging them.</li>
+    <li>Fill in anything that shouldn't burden someone logging live: the full memorial lesson write-up, business-session details, secretary's report, and similar long-form content belong on the Names &amp; Lists and Business tabs.</li>
+    <li>Resolve any row flagged for a missing name or page, an unrecognized tunebook code, or a likely duplicate leader spelling (the Song List tab clusters similar spellings and lets you merge them to one canonical form).</li>
+    <li>Where possible, clear flagged items before exporting a final version — a proofing pass now is easier than a correction after publication.</li>
+  </ul>
+
+  <h2>Terminology and Abbreviation Systems</h2>
+  <p>Non-default tunebooks need a short code assigned once, on the Song List tab's Book Handling section. Minutes currently supports two independent code systems for this:</p>
+  <ul>
+    <li><strong>SingLoud.org Work Codes</strong> — used internally, and in every export except the dedicated SHMHA submission.</li>
+    <li><strong>SHMHA abbreviations</strong> — used only in the SHMHA Minutes Book export, translated automatically from the Work Code you assign.</li>
+  </ul>
+  <p>Neither system is more "correct" than the other — they're just the two published vocabularies the suite outputs today. Choosing the Type of output on the Export stage (Minutes Maker, SHMHA Minutes Book Submission, or Simple List) determines which applies, and the preview updates in real time, so you can check any of them before exporting.</p>
+  <p>Minutes Maker has its own per-song and summary-line checkboxes: show the song number, the title, both, or — if you uncheck both — Compile falls back to whichever one it actually has, rather than leaving a call-out with no identification at all. A song's source (tunebook) can also be shown on every call-out rather than only when it differs from the day's default book. None of this affects SHMHA Minutes Book Submission, which always applies its own fixed rule regardless of these checkboxes: printed-book songs are identified by page number only, and a title is used only when there's genuinely no page to give (an "Other" source).</p>
+
+  <h2>How Tunebooks Are Recorded</h2>
+  <p>Not every tunebook is known to this suite in the same depth. Books sit at one of four levels, and the levels are <strong>cumulative</strong> — each includes everything below it. A rough mnemonic: the level is how many things we know.</p>
+  <ul>
+    <li><strong>Level 0 — Other.</strong> We know nothing: just a name typed in passing while logging a singing. It appears in the CSV as the book value <code>Other</code>, and its songs are identified by title, since there's no page numbering to rely on.</li>
+    <li><strong>Level 1 — Basic record.</strong> We know roughly one thing — the title, plus whatever scant details are on hand (compiler, year, codes). If a singing cites one of these, Capture and Compile will recognize the name and say so, but can't look up song titles by page.</li>
+    <li><strong>Level 2 — Indexed.</strong> We know its pages: a complete page-by-page song index. This is the level that lets the Capture stage suggest a title the moment you type a page number, and lets Compile catch a page that doesn't exist in the book. Most books the suite ships with are here.</li>
+    <li><strong>Level 3 — Enriched.</strong> A dedicated file exists per edition, holding — or building toward — the full scholarly record: attribution, concordances, editorial and publication history, bibliography. Level itself just means the file exists, not that it's finished; Tunebooks tracks completeness separately from level, showing a real core complete / core incomplete state (Common Name, Title Proper, and Compiler at minimum) alongside a short list of what else is still missing, rather than treating "has a file" as "done." A growing number of editions have a Tunebook File so far — see the Tunebook Library tab for the current count.</li>
+  </ul>
+  <p>One file holds all of this: <strong><code>tunebook-library.js</code></strong> — every Work and Edition the system knows about, at whatever level each has been brought to. A Level 3 Edition also names its own dedicated Tunebook File (a separate JSON file per edition, in <code>tunebook-files/</code>), loadable on demand from Tunebooks' Library tab. Only Tunebooks edits any of this; Minutes reads tunebook data but never changes it. Tunebooks is a <strong>separate application</strong> with its own home, not a section of Minutes — it exists for the small number of people curating tunebook data, and nothing in Minutes depends on having it open.</p>
+
+  <h2>Preview</h2>
+  <p>The Export stage's preview represents the finished document as it stands right now. Any change you make — a correction on the Song List tab, a session's officer override, a different Type of output, a Minutes Maker checkbox, an opening-paragraph or prayer-phrasing choice — updates it immediately, so what you see is always current.</p>
+
+  <h2>Exporting</h2>
+  <p>The <strong>4 Export</strong> stage currently exports these formats:</p>
+  <table>
+    <tr><th>Format</th><th>Typical use</th></tr>
+    <tr><td>Plain text</td><td>Quick copy into an email or document</td></tr>
+    <tr><td>Markdown</td><td>Posting to a website or wiki</td></tr>
+    <tr><td>HTML</td><td>Ready to publish directly</td></tr>
+    <tr><td>PDF (print view)</td><td>Opens your browser's print dialog — choose "Save as PDF"</td></tr>
+    <tr><td>Master CSV</td><td>The complete, authoritative project file — re-opens in any stage without losing anything already added</td></tr>
+    <tr><td>SHMHA Minutes Book</td><td>Matches the Sacred Harp Musical Heritage Association's printed submission format exactly</td></tr>
+    <tr><td>Simple List</td><td>Terse, events-only list (officers, then each song's leader/page/source) for checking names and details, not publication</td></tr>
+  </table>
+  <p>A Word (.docx) export previously existed but has been removed while its generator is rebuilt against the current data model — use plain text, Markdown, or HTML and paste into Word in the meantime.</p>
+  <p><strong>Output profiles</strong> <span class="planned">Partially implemented</span> — the Export stage has a "Type of output" choice (Minutes Maker, SHMHA Minutes Book Submission, or Simple List) that determines which wording options apply and which export formats make sense, separately from which file format delivers it. The fuller original vision — additional named profiles beyond these three, such as Website, Archival Record, or Data Exchange, each with its own structural rules — is still just an idea.</p>
+  <p><strong>MP3 Chapters and Video Markers</strong> <span class="planned">Planned</span> — a future version may use the order and timing already captured to generate chapter lists for a long recording, YouTube-style timestamp markers, or editing cue sheets. Not available yet.</p>
+  <p>There is one master project file for a singing, not a separate file per stage. Recording it creates the initial Master CSV; Compile enriching it — corrections, business notes, session overrides, and everything else on Compile's tabs — produces an updated Master CSV that supersedes the one before it. That newest Master CSV is the current authoritative record. The other formats in the table above (plain text, Markdown, HTML, PDF, the SHMHA submission) are one-way publication outputs generated *from* the Master CSV — they're not meant to be re-opened or resumed, and none of them replace it.</p>
+
+  <h2>Troubleshooting</h2>
+  <p style="font-size:13px;color:var(--muted);margin:0 0 14px;">These entries mention "Capture" and "Compile" by name since those are the underlying tools that make up Minutes' Capture and Compile stages.</p>
+  <h3>Capture won't re-load my own CSV</h3>
+  <p>Capture's own re-import is strict: the column headers and schema version have to match exactly, since it's designed to resume an in-progress session precisely. A file edited in a spreadsheet program can sometimes reorder or rename columns; re-export from Capture if possible.</p>
+  <h3>A file won't import into Compile, or imports with almost nothing recognized</h3>
+  <p>Compile is much more tolerant than Capture — it matches columns by name, recognizes several older/alternate column names, and will still import a file with only some recognizable columns, flagging what it found. If a file truly imports with nothing usable, check that it has at least a Leader/Caller, Page, or Notes column under some name Compile recognizes.</p>
+  <h3>"Old schema" or version-mismatch message</h3>
+  <p>This behaves differently in each app, and Compile itself behaves differently depending on the specific mismatch. Capture blocks importing a file from a different schema version outright, since it's designed to resume a session exactly. Compile is more tolerant of an unfamiliar-but-older or otherwise-unrecognized version: it flags the mismatch and asks you to double-check the result more carefully than usual, but the import still proceeds. A file reporting a schema version genuinely <em>newer</em> than what the current build of Compile understands is the one case Compile also blocks outright, rather than just flagging — re-exporting an unfamiliar newer schema through this build's own current-schema header could silently discard whatever that newer schema added, which is a real data-loss risk, not just an unfamiliar label. Open a file like that in a version of Compile that actually supports its schema version instead.</p>
+  <h3>Missing or unknown tunebook code</h3>
+  <p>Assign the book a Work Code on the Song List tab's Book Handling section. If the SHMHA export shows a code you don't recognize, check the SHMHA Guide (in the Reference section of the left rail) for its abbreviation table.</p>
+  <h3>Browser storage unavailable</h3>
+  <p>The Capture stage will show a clear warning rather than silently failing to save. Download or copy your minutes right away if you see this, since local autosave isn't working on this device/browser combination.</p>
+  <h3>Preview doesn't match what I expected</h3>
+  <p>Check which Type of output is selected on the Export stage (Minutes Maker, SHMHA Minutes Book Submission, or Simple List) — they apply different style rules. Also check the Song List tab for a row that's still flagged (missing page, unresolved tag, or similar), since an unresolved row can print differently than a finished one.</p>
+  <h3>DOCX export isn't available</h3>
+  <p>Correct — it's been removed while it's rebuilt against the current data model. Use plain text, Markdown, or HTML and paste into Word in the meantime.</p>
+  <h3>The instructional video won't load</h3>
+  <p>It requires an internet connection once embedded. The written instructions on this page cover the same material and work offline.</p>
+  <h3>Opening a singing in Setup doesn't seem to reach Minutes or Compile</h3>
+  <p>It should — visiting either stage for the first time after opening or creating a singing hands that singing to the stage automatically, using the same real import logic a manual file load would. If a stage still looks empty after visiting it, that's worth reporting rather than assuming it's expected; it's not.</p>
+  <h3>I opened Compile without a Capture CSV</h3>
+  <p>That's fine — you can add songs by hand on the Song List tab. Importing a Capture file is the normal path, not a requirement.</p>
+
+  <h2>Version and Schema Information</h2>
+  <p id="versionInfoText">Minutes · Version 1.0.0-beta.104 · Schema 5</p>
+  <p style="font-size:13px;color:var(--muted);">Capture and Compile share the same CSV schema, marked with a Schema Version in every export, so either app can flag a mismatch clearly rather than failing silently.</p>
+
+  <footer class="suite-footer">
+    <span id="footerVersionText">Minutes · Version 1.0.0-beta.104 · Schema 5</span>
+    <span aria-hidden="true">·</span>
+    <a href="index.html">Home</a>
+  </footer>
+  <p style="text-align:center;font-size:10px;color:var(--faint);margin:6px 0 0;">A project of SingLoud.org</p>
+</div>
+<!-- This page used to hard-code its version number, and it drifted six revisions behind the
+     application - which is worst precisely here, since this is the page someone reads when
+     writing a bug report. The number now comes from minutes-version.js, the same single
+     literal minutes.html reads, so the two cannot disagree again.
+
+     The literal text above is kept deliberately as a fallback, not left as a placeholder:
+     this page is also read on its own, and if minutes-version.js is missing or scripting is
+     off it must still show a real version rather than an empty gap. A test asserts that
+     fallback matches the shared constant, so the static copy stays honest too. -->
+<script src="minutes-version.js"></script>
+<script>
+  (function(){
+    try{
+      if (typeof EZMinutesVersion === "undefined" || !EZMinutesVersion.VERSION) return;
+      var text = "Minutes \u00b7 Version " + EZMinutesVersion.VERSION + " \u00b7 Schema " + (EZMinutesVersion.SCHEMA_VERSION || "5");
+      ["versionInfoText", "footerVersionText"].forEach(function(id){
+        var el = document.getElementById(id);
+        if (el) el.textContent = text;
+      });
+    }catch(e){ /* leave the fallback text in place */ }
+  })();
+</script>
+</body>
+</html>
